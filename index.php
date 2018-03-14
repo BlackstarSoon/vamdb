@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>VAMDB</title>
+	<title>VAMDB Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
-	
-	<link rel="stylesheet" href="css/jquery-ui.min.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+   
 </head>
 
 <style type="text/css">
@@ -27,17 +28,24 @@
 </style>
 
 <body>
-<h1>Video Aided Mindful Deep Breathing</h1>
+<!--Header-->
+<?php include ('html/component/header.php'); ?>
 
-<div class="container">
-    <div class="row">
+<div class="container" style="height: 50%; width: 50%; margin-top: 100px;">
+    <div class="row align-items-center justify-content-center">
         <div class="col-sm-8">
             <div class="form-login">
             <h4>Please Login to Continue Access</h4>
-            <input type="text" id="username" class="form-control input-sm chat-input" placeholder="username" />
-            </br>
-            <input type="password" id="password" class="form-control input-sm chat-input" placeholder="password" />
-            </br>
+            
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" id="username" class="form-control input-sm chat-input" placeholder="username" />         
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input type="password" id="password" class="form-control input-sm chat-input" placeholder="password" />       
+            </div>
+            
             <div class="wrapper">
             <span class="group-btn">     
                 <a href="#" class="btn btn-primary btn-md" onclick="login()">login</a>
@@ -48,5 +56,7 @@
     </div>
 </div>
 
+<!--Footer-->
+<?php include ('html/component/footer.php'); ?>
 </body>
 </html>
