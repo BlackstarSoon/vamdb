@@ -31,9 +31,9 @@
 <!--Header-->
 <?php include ('html/component/header.php'); ?>
 
-<div class="container" style="height: 50%; width: 50%; margin-top: 100px;">
+<div class="container ">
     <div class="row align-items-center justify-content-center">
-        <div class="col-sm-8">
+        <div class="col-sm-12">
             <div class="form-login">
             <h4>Please Login to Continue Access</h4>
             
