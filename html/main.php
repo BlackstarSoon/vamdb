@@ -18,7 +18,12 @@
 	<!--Header-->
 	<?php include('../html/component/header.php'); ?>
 
-	
+	<?php
+		$gender = [
+			'M' => 'Male',
+			'F' => 'Female',
+		];
+	?>
 
 	<!--php connection-->
 	<?php
@@ -79,7 +84,7 @@
 								<td><?= $row["age"] ?></td>
 								<td><?= $row["country"] ?></td>
 								<td><?= $row["race"] ?></td>
-								<td><?= $row["gender"] ?></td>
+								<td><?= $gender[$row["gender"]] ?></td>
 								<td><?= $row["weight"] ?></td>
 								<td><?= $row["height"] ?></td>
 								<td><?= $row["sdnn_before"] ?></td>
