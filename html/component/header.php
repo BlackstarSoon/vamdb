@@ -34,10 +34,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../navbar/">Login</a></li>
- 
-      </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
