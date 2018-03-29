@@ -22,7 +22,7 @@
 	$stmt -> bind_param("isssiisss", $age, $country, $race, $gender, $weight, $height, $sdnn_before, $sdnn_after, $posted);
 
 	//set parameters
-	
+	/*
 	$age = int($_POST['age']);
 	$country = 'Malaysia';
 	$race = 'Chinese';
@@ -32,8 +32,8 @@
 	$sdnn_before = '97.52';
 	$sdnn_after = '113.85';
 	$posted = date('Y-m-d H:i:s');
+	*/
 	
-	/*
 	$age = int($_POST["age"]);
 	$country = $_POST["country"];
 	$race = $_POST["race"];
@@ -43,15 +43,10 @@
 	$sdnn_before = $_POST["sdnn_before"];
 	$sdnn_after = $_POST["sdnn_after"];
 	$posted = date('Y-m-d H:i:s');
-	*/
-
+	
 	//execute
 	$stmt ->execute();
 
-	?>
-	<p>New record created successfully<p>
-
-	<?php 
 	$stmt ->close();
 	$conn ->close();
 ?>
