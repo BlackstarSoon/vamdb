@@ -34,12 +34,12 @@
 	$posted = date('Y-m-d H:i:s');
 	*/
 	
-	$age = 22;
+	$age = intval($_POST["age"]);
 	$country = $_POST["country"];
 	$race = $_POST["race"];
 	$gender = $gender[$_POST["gender"]];
-	$weight = 83;
-	$height = 181;
+	$weight = intval($_POST["weight"]);
+	$height = intval($_POST["height"]);
 	$sdnn_before = $_POST["sdnn_before"];
 	$sdnn_after = $_POST["sdnn_after"];
 	$posted = date('Y-m-d H:i:s');
