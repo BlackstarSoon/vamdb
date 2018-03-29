@@ -22,6 +22,18 @@
 	$stmt -> bind_param("isssiisss", $age, $country, $race, $gender, $weight, $height, $sdnn_before, $sdnn_after, $posted);
 
 	//set parameters
+	
+	$age = 25;
+	$country = 'Malaysia';
+	$race = 'Chinese';
+	$gender = 'M';
+	$weight = 80;
+	$height = 173;
+	$sdnn_before = '58.86';
+	$sdnn_after = '79.27';
+	$posted = date('Y-m-d H:i:s');
+	
+	/*
 	$age = int($_POST["age"]);
 	$country = $_POST["country"];
 	$race = $_POST["race"];
@@ -31,6 +43,7 @@
 	$sdnn_before = $_POST["sdnn_before"];
 	$sdnn_after = $_POST["sdnn_after"];
 	$posted = date('Y-m-d H:i:s');
+	*/
 
 	//execute
 	$stmt ->execute();
