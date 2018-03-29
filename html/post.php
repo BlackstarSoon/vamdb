@@ -25,12 +25,12 @@
 	
 	$age = int($_POST['age']);
 	$country = $_POST['country'];
-	$race = $_POST['race'];
+	$race = 'Chinese';
 	$gender = 'M';
 	$weight = int($_POST['weight']);
 	$height = int($_POST['height']);
-	$sdnn_before = $_POST['sdnn_before'];
-	$sdnn_after = $_POST['sdnn_after'];
+	$sdnn_before = '97.52';
+	$sdnn_after = '113.85';
 	$posted = date('Y-m-d H:i:s');
 	
 	/*
