@@ -24,11 +24,11 @@
 	//set parameters
 	
 	$age = int($_POST['age']);
-	$country = $_POST['country'];
+	$country = 'Malaysia';
 	$race = 'Chinese';
 	$gender = 'M';
-	$weight = int($_POST['weight']);
-	$height = int($_POST['height']);
+	$weight = 83;
+	$height = 181;
 	$sdnn_before = '97.52';
 	$sdnn_after = '113.85';
 	$posted = date('Y-m-d H:i:s');
