@@ -41,7 +41,7 @@
 		}
 		
 		//prepare statement
-		$stmt = $conn ->prepare("SELECT * FROM records"); 
+		$stmt = $conn ->prepare("SELECT * FROM records order by id desc"); 
 		
 		//execute statement
 		$stmt ->execute();
@@ -76,11 +76,12 @@
 				<?php
 					if($records ->num_rows >0)
 					{
+						$i = 1;
 						while($row = mysqli_fetch_array($records))
 						{
 							?>
 							<tr>
-								<td scope="row"><?= $row["id"] ?></td>
+								<td scope="row"><?= $i++ ?></td>
 								<td><?= $row["age"] ?></td>
 								<td><?= $row["country"] ?></td>
 								<td><?= $row["race"] ?></td>
