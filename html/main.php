@@ -23,6 +23,12 @@
 			'M' => 'Male',
 			'F' => 'Female',
 		];
+
+		$total_sdnn_before = 0;
+		$total_sdnn_after = 0;
+		$count = 0;
+		$average_sdnn_before = 0;
+		$average_sdnn_after = 0;
 	?>
 
 	<!--php connection-->
@@ -76,12 +82,13 @@
 				<?php
 					if($records ->num_rows >0)
 					{
-						$i = 1;
 						while($row = mysqli_fetch_array($records))
 						{
+							$total_sdnn_before += doubleval($row["sdnn_before"]);
+							$total_sdnn_after += doubleval($row["sdnn_after"]);
 							?>
 							<tr>
-								<td scope="row"><?= $i++ ?></td>
+								<td scope="row"><?= ++$count ?></td>
 								<td><?= $row["age"] ?></td>
 								<td><?= $row["country"] ?></td>
 								<td><?= $row["race"] ?></td>
@@ -100,6 +107,36 @@
 					$conn ->close();
 
 				?>
+				</tbody>
+			</table>
+		</div>
+		<br>
+		<div class="row col-sm-12">
+			<?php
+				$average_sdnn_before = $total_sdnn_before / $count;
+				$average_sdnn_after = $total_sdnn_after / $count;
+				$average_sdnn_increase = $average_sdnn_after - $average_sdnn_before;
+				$efficiency = $average_sdnn_increase / $average_sdnn_before * 100;
+			?>
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Total Record</th>
+						<th scope="col">Average SDNN Before</th>
+						<th scope="col">Average SDNN After</th>
+						<th scope="col">Average Increased SDNN</th>
+						<th scope="col">Percentage SDNN Increased (%)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><?= $count ?></td>
+						<td><?= round($average_sdnn_before, 3) ?></td>
+						<td><?= round($average_sdnn_after, 3) ?></td>
+						<td><?= round($average_sdnn_increase, 3) ?></td>
+						<td><?= round($efficiency, 2) ?></td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
