@@ -38,11 +38,13 @@
                 <div class="row">
                     <div class="center-block">
                         <img class="profile-img center-block"
-                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
+                            src="picture/user.png" alt="">
                     </div>
                 </div>
 
-                <h4>Please Login to Continue Access</h4>
+                <div class="row text-center">
+                    <h4>Please Login to Continue Access</h4>    
+                </div>
                 
                 <div class="form-group input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
