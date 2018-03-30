@@ -141,7 +141,7 @@
 			</table>
 		</div>
 	</div>
-
+	<br><br><br>
 	<?php include('../html/component/footer.php'); ?>
 </body>
 </html>
