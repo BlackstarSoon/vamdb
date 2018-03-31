@@ -30,7 +30,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="https://vamdbapp.herokuapp.com/index.php">Home</a></li>
+        <li><a href="https://vamdbapp.herokuapp.com/index.php">Home</a></li>
         <li><a href="https://vamdbapp.herokuapp.com/html/about.php">About Us</a></li>
       </ul>
     </div><!--/.nav-collapse -->
