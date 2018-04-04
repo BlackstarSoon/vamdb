@@ -19,7 +19,7 @@
 		die("Connection failed : ".$conn ->connect_error);
 	}
 
-	/*
+	
 	$age = intval($_POST["age"]);
 	$country = $_POST["country"];
 	$race = $_POST["race"];
@@ -29,8 +29,8 @@
 	$sdnn_before = $_POST["sdnn_before"];
 	$sdnn_after = $_POST["sdnn_after"];
 	$posted = date('Y-m-d H:i:s');
-	*/
-
+	
+	/*
 	$age = 20;
 	$country = 'Malaysia';
 	$race = 'Chinese';
@@ -40,6 +40,7 @@
 	$sdnn_before = '51.94';
 	$sdnn_after = '68.44';
 	$posted = date('Y-m-d H:i:s');
+	*/
 
 	//prepare statement
 	$stmt = $conn ->prepare("SELECT * FROM records order by id desc limit 1"); 
