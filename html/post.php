@@ -53,17 +53,22 @@
 
 	var_dump($records);
 
-	if($records ->num_rows >0){
-		while($row = mysqli_fetch_array($records)){
-			if( $row["sdnn_before"] == $sdnn_before && $row["sdnn_after"] == $sdnn_after){
-				//do nothing
-				echo "Duplicate result";
-			}
-			else{
-				$stmt = $conn->prepare("INSERT INTO records (age, country, race, gender, weight, height, sdnn_before, sdnn_after, posted) VALUES (?,?,?,?,?,?,?,?,?)");
-				$stmt -> bind_param("isssiisss", $age, $country, $race, $gender, $weight, $height, $sdnn_before, $sdnn_after, $posted);
-				//execute
-				$stmt ->execute();
+	if(is_null($age) || is_null($country) || is_null($race) || is_null($gender) || is_null($weight)){
+		echo "Null value";
+	}
+	else{
+		if($records ->num_rows >0){
+			while($row = mysqli_fetch_array($records)){
+				if( $row["sdnn_before"] == $sdnn_before && $row["sdnn_after"] == $sdnn_after){
+					//do nothing
+					echo "Duplicate result";
+				}
+				else{
+					$stmt = $conn->prepare("INSERT INTO records (age, country, race, gender, weight, height, sdnn_before, sdnn_after, posted) VALUES (?,?,?,?,?,?,?,?,?)");
+					$stmt -> bind_param("isssiisss", $age, $country, $race, $gender, $weight, $height, $sdnn_before, $sdnn_after, $posted);
+					//execute
+					$stmt ->execute();
+				}
 			}
 		}
 	}
