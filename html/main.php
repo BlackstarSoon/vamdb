@@ -58,6 +58,12 @@
 
 	<div class="container">
 		<div class="row">
+			<ul class="nav nav-tabs">
+			    <li class="active"><a href="../html/main.php">SDNN Records</a></li>
+			    <li><a href="../html/statistic.php">Records Statistic</a></li>
+		  	</ul>
+		</div>
+		<div class="row">
 			<h1>SDNN Records</h1>
 		</div>
 		<div class="row col-sm-12">
@@ -65,7 +71,7 @@
 			<table id="table_data" class="display table table-striped">
 				<thead>
 					<tr>
-						<th scope="col">ID</th>
+						<th scope="col">No.</th>
 						<th scope="col">Age</th>
 						<th scope="col">Country</th>
 						<th scope="col">Race</th>
