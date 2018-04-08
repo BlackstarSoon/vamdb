@@ -139,7 +139,7 @@
 				$efficiency = $average_sdnn_increase / $average_sdnn_before * 100;
 			?>
 
-			<table class="table table-striped">
+			<table class="table table-striped" style="overflow-x: auto">
 				<thead>
 					<tr>
 						<th scope="col">Total Record</th>
