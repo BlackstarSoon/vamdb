@@ -13,6 +13,13 @@
 </head>
 
 <body>
+	<?php
+	if (!session_id()) session_start();
+	if (!$_SESSION['valid']){ 
+		header("Location:../index.php");
+		die();
+	}
+	?>
 	<!--Header-->
 	<?php include('../html/component/header.php'); ?>
 
@@ -123,6 +130,12 @@
 
 
 	<div class="container">
+		<div class="row">
+			<p>
+				<b>Welcome, <?= $_SESSION['uname'] ?></b> &nbsp;&nbsp;&nbsp;
+				<a href="/vamdb/html/logout.php">Logout</a>
+			</p>		
+		</div>
 		<div class="row">
 			<ul class="nav nav-tabs">
 			    <li><a href="../html/main.php">SDNN Records</a></li>

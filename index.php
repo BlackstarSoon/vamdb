@@ -1,3 +1,8 @@
+<?php
+    ob_start();
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,39 +36,58 @@
 <!--Header-->
 <?php include ('html/component/header.php'); ?>
 
-<div class="container ">
-    <div class="row align-items-center justify-content-center">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <div class="form-login">
-                <div class="row">
-                    <div class="center-block">
-                        <img class="profile-img center-block"
-                            src="picture/user.png" alt="">
+<div class="container">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <div class="form-login">
+                    <div class="row">
+                        <div class="center-block">
+                            <img class="profile-img center-block"
+                                src="picture/user.png" alt="">
+                        </div>
                     </div>
-                </div>
 
-                <div class="row text-center">
-                    <h4>Please Login to Continue Access</h4>    
-                </div>
-                
-                <div class="form-group input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input type="text" id="username" class="form-control input-sm chat-input" placeholder="username" />         
-                </div>
-                <div class="form-group input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input type="password" id="password" class="form-control input-sm chat-input" placeholder="password" />       
-                </div>
-                
-                <div class="wrapper">
-                    <span class="group-btn">     
-                        <a href="#" class="btn btn-primary btn-md center-block" onclick="login()">login</a>
-                    </span>
+                    <div class="row text-center">
+                        <h4>Please Login to Continue Access</h4>    
+                    </div>
+                    
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" id="username" name="uname" class="form-control input-sm chat-input" placeholder="username" />         
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" id="password" name="psw" class="form-control input-sm chat-input" placeholder="password" />       
+                    </div>
+                    
+                    <div class="wrapper">
+                        <span class="group-btn">     
+                            <button type="submit" name="loginbtn" class="btn btn-primary center-block">login</a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>    
 </div>
+
+<?php
+    if(isset($_POST['loginbtn']) && !empty($_POST['uname']) && !empty($_POST['psw'])){
+        $uname = $_POST['uname'];
+        $password = $_POST['psw'];
+
+        if($uname == 'admin' && $password == 'admin'){
+            $_SESSION['valid'] = true;
+            $_SESSION['timeout'] = time();
+            $_SESSION['uname'] = $uname;
+            header('Location: html/main.php');
+        }
+        else{
+            echo "Invalid Username or Password";
+        }
+    }
+?>
 
 <!--Footer-->
 <?php include ('html/component/footer.php'); ?>
