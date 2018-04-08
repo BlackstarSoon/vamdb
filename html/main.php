@@ -67,7 +67,7 @@
 		<div class="row">
 			<p>
 				<b>Welcome, <?= $_SESSION['uname'] ?></b> &nbsp;&nbsp;&nbsp;
-				<a href="/vamdb/html/logout.php">Logout</a>
+				<a href="../html/logout.php">Logout</a>
 			</p>		
 		</div>
 		<div class="row">
