@@ -4,7 +4,8 @@
 	<title>Main Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
@@ -81,7 +82,7 @@
 		</div>
 		<div class="row col-sm-12">
 			<!--Display records-->
-			<table id="table_data" class="display table table-striped">
+			<table id="table_data" class="display nowrap table table-striped" style="width: 100%">
 				<thead>
 					<tr>
 						<th scope="col">No.</th>
