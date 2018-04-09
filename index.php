@@ -75,18 +75,48 @@
 <?php
     if(isset($_POST['loginbtn']) && !empty($_POST['uname']) && !empty($_POST['psw'])){
         $uname = $_POST['uname'];
-        $password = $_POST['psw'];
+        $pw = $_POST['psw'];
+     
+        $servername = "us-cdbr-iron-east-05.cleardb.net";
+        $username = "b9b122a16bac23";
+        $password = "b2362a60";
+        $dbname = "heroku_d8a61c209a03871";
 
-        if($uname == 'admin' && $password == 'admin'){
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        if($conn ->connect_error)
+        {
+            die("Connection failed : ".$conn ->connect_error);
+        }
+        
+        //prepare statement
+        $stmt = $conn ->prepare("SELECT * FROM admins where username=?"); 
+        $stmt->bind_param("s", $uname);
+        $stmt->execute();
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($result->num_rows > 0) {
+            while($row = mysqli_fetch_array($result)) {
+                $pwdb = $row['password'];
+                $usernamedb = $row['username'];
+                $iddb = $row['id'];
+            }
+        }
+            
+        $conn->close();
+
+        if($uname == $usernamedb && $pw == $pwdb){
             $_SESSION['valid'] = true;
             $_SESSION['timeout'] = time();
             $_SESSION['uname'] = $uname;
+            $_SESSION['iddb'] = $iddb;
             header('Location: html/main.php');
         }
         else{
-            echo "Invalid Username or Password";
+            echo "<script type='text/javascript'>alert('Invalid Username or Password');</script>";
         }
     }
+    
 ?>
 
 <!--Footer-->
